@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahnsteig Durchsage</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MBCWF System</h1>
+
+        <label for="bahnsteig">Wähle einen Bahnsteig:</label>
+        <select id="bahnsteig">
+            <option value="bahnsteig1.mp3">Bahnsteig 1</option>
+            <option value="bahnsteig2.mp3">Bahnsteig 2</option>
+            <option value="bahnsteig3.mp3">Bahnsteig 3</option>
+            <option value="bahnsteig4.mp3">Bahnsteig 4</option>
+        </select>
+
+        <label for="ansagetyp">Wähle den Typ der Ansage:</label>
+        <select id="ansagetyp" onchange="updateAnsagen()">
+            <option value="railjet">Railjet</option>
+            <option value="rex">REX</option>
+            <option value="r">R</option>
+            <option value="ice">ICE</option>
+            <option value="ic">IC</option>
+            <option value="ec">EC</option>
+        </select>
+
+        <label for="ansage">Wähle eine Ansage:</label>
+        <select id="ansage">
+
+        </select>
+
+        <button onclick="playAudio()">Abspielen</button>
+
+        <footer>
+            <p>&copy; 2025 [Name Einfügen] - MBCWF Software</p>
+        </footer>
+    </div>
+
+    <script>
+        function loadAnsagen() {
+            fetch('./ansagen.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Netzwerk-Fehler');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Daten geladen:', data);
+                    window.ansagenData = data;
+                    updateAnsagen();
+                })
+                .catch(error => console.error('Fehler beim Laden der Ansagen:', error));
+        }
+    
+        function updateAnsagen() {
+            const ansagetyp = document.getElementById("ansagetyp").value;
+            const ansageSelect = document.getElementById("ansage");
+    
+            ansageSelect.innerHTML = "";
+    
+            const selectedAnsagen = window.ansagenData[ansagetyp] || [];
+            selectedAnsagen.forEach(function(ansage) {
+                const option = document.createElement("option");
+                option.value = ansage.value;
+                option.textContent = ansage.text;
+                ansageSelect.appendChild(option);
+            });
+        }
+    
+        function playAudio() {
+            let bahnsteigAudio = new Audio(document.getElementById("bahnsteig").value);
+            let ansageAudio = new Audio(document.getElementById("ansage").value);
+    
+            bahnsteigAudio.play();
+            bahnsteigAudio.onended = function() {
+                ansageAudio.play();
+            };
+        }
+
+        window.onload = loadAnsagen;
+    </script>
+</body>
+</html>
