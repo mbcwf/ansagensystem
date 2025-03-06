@@ -1,0 +1,26 @@
+{
+    "railjet": [
+        { "value": "railjet_ansage1.mp3", "text": "Railjet Ansage 1" },
+        { "value": "railjet_ansage2.mp3", "text": "Railjet Ansage 2" }
+    ],
+    "rex": [
+        { "value": "rex_ansage1.mp3", "text": "REX Ansage 1" },
+        { "value": "rex_ansage2.mp3", "text": "REX Ansage 2" }
+    ],
+    "r": [
+        { "value": "r_ansage1.mp3", "text": "R Ansage 1" },
+        { "value": "r_ansage2.mp3", "text": "R Ansage 2" }
+    ],
+    "ice": [
+        { "value": "ice_ansage1.mp3", "text": "ICE Ansage 1" },
+        { "value": "ice_ansage2.mp3", "text": "ICE Ansage 2" }
+    ],
+    "ic": [
+        { "value": "ic_ansage1.mp3", "text": "IC Ansage 1" },
+        { "value": "ic_ansage2.mp3", "text": "IC Ansage 2" }
+    ],
+    "ec": [
+        { "value": "ec_ansage1.mp3", "text": "EC Ansage 1" },
+        { "value": "ec_ansage2.mp3", "text": "EC Ansage 2" }
+    ]
+}
