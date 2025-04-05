@@ -68,7 +68,7 @@ button {
 
 button:hover {
     background-color: #e6b800;
-    transform: scale(1.05);
+
 }
 
 button:active {
@@ -79,7 +79,7 @@ button:active {
 .container {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 7px;
     text-align: center;
     display: flex;
     flex-direction: column;

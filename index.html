@@ -12,20 +12,16 @@
 
         <label for="bahnsteig">Wähle einen Bahnsteig:</label>
         <select id="bahnsteig">
-            <option value="bahnsteig1.mp3">Bahnsteig 1</option>
-            <option value="bahnsteig2.mp3">Bahnsteig 2</option>
-            <option value="bahnsteig3.mp3">Bahnsteig 3</option>
-            <option value="bahnsteig4.mp3">Bahnsteig 4</option>
+            <option value="./wav/bstg1.wav">Bahnsteig 1</option>
+            <option value="./wav/bstg2.wav">Bahnsteig 2</option>
         </select>
 
         <label for="ansagetyp">Wähle den Typ der Ansage:</label>
         <select id="ansagetyp" onchange="updateAnsagen()">
-            <option value="railjet">Railjet</option>
+            <option value="sbahn">S-Bahn</option>
             <option value="rex">REX</option>
             <option value="r">R</option>
-            <option value="ice">ICE</option>
-            <option value="ic">IC</option>
-            <option value="ec">EC</option>
+            <option value="sonstige">Not Defined</option>
         </select>
 
         <label for="ansage">Wähle eine Ansage:</label>
@@ -35,8 +31,16 @@
 
         <button onclick="playAudio()">Abspielen</button>
 
+        <label for="zugfahrt">Solo-Ansagen:</label>
+        <select id="zugfahrt">
+            <option value="./wav/zugfahrt_bstg1.wav">Zugfahrt Bstg. 1</option>
+            <option value="./wav/sommersperre.wav">Sommersperre (2024)</option>
+        </select>
+
+        <button onclick="zugfahrt()">Abspielen</button>
+
         <footer>
-            <p>&copy; 2025 [Name Einfügen] - MBCWF Software</p>
+            <p>&copy; 2025 Adrian Dorbez - MBCWF Software</p>
         </footer>
     </div>
 
@@ -45,7 +49,7 @@
             fetch('./ansagen.json')
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Netzwerk-Fehler');
+                        throw new Error('Error 500 - Internal Error');
                     }
                     return response.json();
                 })
@@ -80,6 +84,11 @@
             bahnsteigAudio.onended = function() {
                 ansageAudio.play();
             };
+        }
+
+        function zugfahrt() {
+            let zugfahrt = new Audio(document.getElementById("zugfahrt").value);
+            zugfahrt.play();
         }
 
         window.onload = loadAnsagen;

@@ -1,26 +1,22 @@
 {
-    "railjet": [
-        { "value": "railjet_ansage1.mp3", "text": "Railjet Ansage 1" },
-        { "value": "railjet_ansage2.mp3", "text": "Railjet Ansage 2" }
-    ],
     "rex": [
-        { "value": "rex_ansage1.mp3", "text": "REX Ansage 1" },
-        { "value": "rex_ansage2.mp3", "text": "REX Ansage 2" }
+        { "value": "./wav/rex1_wien-hbf.wav", "text": "REX 1 Wien Hbf" },
+        { "value": "./wav/rex6_deutschkreuz.wav", "text": "REX 6 Deutschkreuz" },
+        { "value": "./wav/rex64_wien-hbf.wav", "text": "REX 64 Wien Hbf" }
     ],
     "r": [
-        { "value": "r_ansage1.mp3", "text": "R Ansage 1" },
-        { "value": "r_ansage2.mp3", "text": "R Ansage 2" }
+        { "value": "./wav/r81_marchegg.wav", "text": "R 81 Marchegg" },
+        { "value": "./wav/r81_wien-hbf.wav", "text": "R 81 Wien Hbf" },
+        { "value": "./wav/r95_traiskirchen_aspangbahn.wav", "text": "R 95 Traiskirchen Aspangbahn" },
+        { "value": "./wav/r95_wien-hbf.wav", "text": "R 95 Wien Hbf" }
     ],
-    "ice": [
-        { "value": "ice_ansage1.mp3", "text": "ICE Ansage 1" },
-        { "value": "ice_ansage2.mp3", "text": "ICE Ansage 2" }
+    "sbahn": [
+        { "value": "./wav/s60_bruck-a-d-leitha.wav", "text": "S60 Bruck an der Leitha" },
+        { "value": "./wav/s60_wien-hbf.wav", "text": "S60 Wien Hbf" },
+        { "value": "./wav/s60_wr-neustadt.wav", "text": "S60 Wiener Neustadt" },
+        { "value": "./wav/s80_wien-aspern-nord.wav", "text": "S80 Wien Aspern Nord" },
+        { "value": "./wav/s80_wien-hütteldorf.wav", "text": "S80 Wien Hütteldorf" }
     ],
-    "ic": [
-        { "value": "ic_ansage1.mp3", "text": "IC Ansage 1" },
-        { "value": "ic_ansage2.mp3", "text": "IC Ansage 2" }
-    ],
-    "ec": [
-        { "value": "ec_ansage1.mp3", "text": "EC Ansage 1" },
-        { "value": "ec_ansage2.mp3", "text": "EC Ansage 2" }
+    "sonstige": [
     ]
 }
